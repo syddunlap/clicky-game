@@ -1,0 +1,63 @@
+[
+    {
+      "id": 1,
+      "name": "Helga G. Pataki",
+      "image": "public/assets/images/helga.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Gerald Martin Johanssen",
+      "image": "public/assets/images/gerald.png"
+    },
+    {
+      "id": 3,
+      "name": "Arnold Shortman",
+      "image": "public/assets/images/arnold.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Grandpa 'Steely' Phil",
+      "image": "public/assets/images/grandpa.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Harold Berman",
+      "image": "public/assets/images/harold.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Brainy",
+      "image": "public/assets/images/brainy.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Phoebe",
+      "image": "public/assets/images/phoebe.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Eugene Horowitz",
+      "image": "public/assets/images/eugene.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Rhonda Wellington Lloyd",
+      "image": "public/assets/images/rhonda.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Mr. Simmons",
+      "image": "public/assets/images/mrsimmons.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Miriam Pataki",
+      "image": "public/assets/images/miriam.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Grandma 'Pookie' Gertrude",
+      "image": "public/assets/images/gertie.jpg"
+    }
+  ]
+  
