@@ -4,32 +4,37 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import options from "./options.json";
 
-function App() {
-  return (
-    <Wrapper>
-      <Title>Clicky Game!</Title>
-      <OptionCard
-        id={options[0].id}
-        key={options[0].id}
-        image={options[0].image}
-      />
-      <OptionCard
-        id={options[1].id}
-        key={options[1].id}
-        image={options[1].image}
-      />
-      <OptionCard
-        id={options[2].id}
-        key={options[2].id}
-        image={options[2].image}
-      />
-      <OptionCard
-        id={options[3].id}
-        key={options[3].id}
-        image={options[3].image}
-      />
-    </Wrapper>
-  )
+class App extends Component {
+  // Setting this.state.s to the options json array
+  state = {
+    options
+  };
+
+  removeOption = id => {
+    // Filter this.state.options for options with an id not equal to the id being removed
+    const options = this.state.options.filter(option => option.id !== id);
+    // Set this.state.options equal to the new friends array
+    this.setState({ options });
+  };
+
+  // Map over this.state.options and render an OptionCard component for each option object
+  render() {
+    return (
+      <Wrapper>
+        <Title>Clicky Game!</Title>
+        {this.state.options.map(option => (
+          <OptionCard
+            removeOption={this.removeOption}
+            id={option.id}
+            key={option.id}
+            name={option.name}
+            image={option.image}
+          />
+        ))}
+      </Wrapper>
+    );
+  }
 }
 
 export default App;
+

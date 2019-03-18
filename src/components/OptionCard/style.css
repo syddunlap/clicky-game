@@ -4,7 +4,8 @@ div {
 
 click-item {
   background-size: cover;
-  background-position: 50%;
+  background-position-x: 50%;
+  background-position-y: center;
   height: 170px;
   width: 170px;
   margin: 8px 25px 8px 25px;
