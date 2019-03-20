@@ -47,6 +47,7 @@ class App extends Component {
         message: "You guessed correctly!",
         topScore: this.state.score + 1 > this.state.topScore ? this.state.score + 1 : this.state.topScore,
         images: this.state.images.sort(() => 0.5 - Math.random()),
+        shake: "false",
         text: "success"
       });
     }
