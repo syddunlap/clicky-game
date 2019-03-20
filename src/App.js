@@ -24,7 +24,8 @@ class App extends Component {
       "./assets/images/mr-poopy-butthole.jpeg",
       "./assets/images/noob-noob.jpg",
       "./assets/images/ants-in-my-eyes-johnson.jpg",
-    ]
+    ],
+    shake: "false"
   }
 
   startGame = (key) => {
@@ -33,14 +34,15 @@ class App extends Component {
         score: 0,
         clicked: [],
         message: "ALREADY CLICKED THAT ONE!",
-        images: this.state.images.sort(() => 0.5 - Math.random())
+        images: this.state.images.sort(() => 0.5 - Math.random()),
+        shake: "true"
       });
-      document.getElementById("message").classList.add("text-danger");
-      [...document.getElementsByClassName("card")].map((element) => element.classList.add("shake"));
-      setTimeout(() => {
-        document.getElementById("message").classList.remove("text-danger");
-        [...document.getElementsByClassName("card")].map((element) => element.classList.remove("shake"));
-      }, 500);
+      // document.getElementById("message").classList.add("text-danger");
+      // [...document.getElementsByClassName("card")].map((element) => element.classList.add("shake"));
+      // setTimeout(() => {
+      //   document.getElementById("message").classList.remove("text-danger");
+      //   [...document.getElementsByClassName("card")].map((element) => element.classList.remove("shake"));
+      // }, 500);
     }
     else {
       this.setState({
@@ -50,10 +52,10 @@ class App extends Component {
         topScore: this.state.score + 1 > this.state.topScore ? this.state.score + 1 : this.state.topScore,
         images: this.state.images.sort(() => 0.5 - Math.random())
       });
-      document.getElementById("message").classList.add("text-success");
-      setTimeout(() => {
-        document.getElementById("message").classList.remove("text-success");
-      }, 500);
+      // document.getElementById("message").classList.add("text-success");
+      // setTimeout(() => {
+      //   document.getElementById("message").classList.remove("text-success");
+      // }, 500);
     }
   }
   
@@ -66,7 +68,7 @@ class App extends Component {
           topScore={this.state.topScore}>
         </NavBar>
         <BrowserRouter basename="/clicky-game/" />
-        <Wrapper>
+        <Wrapper shake={this.state.shake}>
         <div className="container d-flex flex-row flex-wrap mx-auto justify-content-center my-5">
           {this.state.images.map((url, i) => (
             <Card 
