@@ -8,3 +8,7 @@
     z-index: 99;
     white-space: nowrap;
 }
+
+.text-danger, .text-success {
+    transition: color 0.25s !important;
+}

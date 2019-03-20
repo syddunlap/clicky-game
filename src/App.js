@@ -25,7 +25,8 @@ class App extends Component {
       "./assets/images/noob-noob.jpg",
       "./assets/images/ants-in-my-eyes-johnson.jpg",
     ],
-    shake: "false"
+    shake: "false",
+    text: ""
   }
 
   startGame = (key) => {
@@ -35,14 +36,9 @@ class App extends Component {
         clicked: [],
         message: "ALREADY CLICKED THAT ONE!",
         images: this.state.images.sort(() => 0.5 - Math.random()),
-        shake: "true"
+        shake: "true",
+        text: "danger"
       });
-      // document.getElementById("message").classList.add("text-danger");
-      // [...document.getElementsByClassName("card")].map((element) => element.classList.add("shake"));
-      // setTimeout(() => {
-      //   document.getElementById("message").classList.remove("text-danger");
-      //   [...document.getElementsByClassName("card")].map((element) => element.classList.remove("shake"));
-      // }, 500);
     }
     else {
       this.setState({
@@ -50,12 +46,9 @@ class App extends Component {
         clicked: [...this.state.clicked, key],
         message: "You guessed correctly!",
         topScore: this.state.score + 1 > this.state.topScore ? this.state.score + 1 : this.state.topScore,
-        images: this.state.images.sort(() => 0.5 - Math.random())
+        images: this.state.images.sort(() => 0.5 - Math.random()),
+        text: "success"
       });
-      // document.getElementById("message").classList.add("text-success");
-      // setTimeout(() => {
-      //   document.getElementById("message").classList.remove("text-success");
-      // }, 500);
     }
   }
   
@@ -65,7 +58,8 @@ class App extends Component {
         <NavBar
           message={this.state.message}
           score={this.state.score}
-          topScore={this.state.topScore}>
+          topScore={this.state.topScore}
+          text={this.state.text}>
         </NavBar>
         <BrowserRouter basename="/clicky-game/" />
         <Wrapper shake={this.state.shake}>
